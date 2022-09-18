@@ -7,9 +7,7 @@ from openpyxl.writer.excel import save_virtual_workbook
 def data_to_xslx(user_data: list):
     wb = Workbook()
     ws = wb.active
-
     ws.auto_filter.ref = f"A1:D{len(user_data) + 1}"  # filter
-
     names: dict = {"A1": "ID", "B1": "Name", "C1": "Phone", "D1": "About"}
     for key, value in names.items():
         cl = ws[key]
