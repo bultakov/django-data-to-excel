@@ -13,5 +13,5 @@ def home(request):
 
 
 def generate_excel(request):
-    user_data = UserData.objects.all()
+    user_data = UserData.objects.all().values_list()
     return data_to_xslx(user_data=user_data)
