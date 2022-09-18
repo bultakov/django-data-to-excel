@@ -1,7 +1,7 @@
 from django.shortcuts import render
 
 from .models import UserData
-from .utils import data_to_xslx
+from .utils import data_to_xlsx
 
 
 def home(request):
@@ -14,4 +14,4 @@ def home(request):
 
 def generate_excel(request):
     user_data = UserData.objects.all().values_list()
-    return data_to_xslx(user_data=user_data)
+    return data_to_xlsx(user_data=user_data)
