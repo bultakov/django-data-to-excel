@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Export to Excel file</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            border: 1px solid black;
+        }
+
+        table td, th {
+            border: 1px solid black;
+        }
+
+        td, th {
+            height: 50px;
+        }
+
+        #cssTable th, td {
+            text-align: center;
+            vertical-align: middle;
+        }
+    </style>
+</head>
+<body>
+<h1>Export to Excel file</h1>
+<table id="cssTable">
+    <tr>
+        <th width="150px">ID</th>
+        <th width="250px">Name</th>
+        <th width="250px">Phone</th>
+        <th width="1000px">About</th>
+    </tr>
+    {% for user in user_data %}
+        <tr>
+            <td>{{ forloop.counter }}</td>
+            <td>{{ user.name }}</td>
+            <td>{{ user.phone }}</td>
+            <td>{{ user.about }}</td>
+        </tr>
+    {% endfor %}
+</table>
+<br>
+<form action="{% url 'excel' %}">
+    <input type="submit" value="Convert to Excel" formtarget="_blank"/>
+</form>
+</body>
+</html>
