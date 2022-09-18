@@ -4,7 +4,7 @@ from openpyxl.styles import Alignment, Font
 from openpyxl.writer.excel import save_virtual_workbook
 
 
-def data_to_xslx(user_data: list):
+def data_to_xlsx(user_data: list):
     wb = Workbook()
     ws = wb.active
 
